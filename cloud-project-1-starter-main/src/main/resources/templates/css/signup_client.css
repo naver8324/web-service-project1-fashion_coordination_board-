@@ -1,0 +1,63 @@
+/* 기존 스타일 유지 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #212020;
+  color: #fff;
+}
+
+header {
+  background-color: #212020;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #fff;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-family: "Arial Black", sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select,
+button,
+input[type="file"] {
+  width: calc(100% - 24px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #666; /* 진한 빨강색 */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444; /* hover 시 조금 더 진한 빨강색으로 변경 */
+}
+
+footer {
+  background-color: #212020;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  border-top: 2px solid #fff;
+}
