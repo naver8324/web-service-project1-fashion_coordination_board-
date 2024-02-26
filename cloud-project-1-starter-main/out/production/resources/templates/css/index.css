@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #212020;
+  color: #fff;
+}
+
+header {
+  background-color: #212020;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #fff; /* 헤더에 하얀색 구분선 추가 */
+}
+
+.header-left h1 {
+  margin: 0;
+  font-family: "Arial Black", sans-serif;
+}
+
+.header-right button {
+  background-color: #666; /* 회색으로 변경 */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-right button:hover {
+  background-color: #444; /* hover 시 색상 변경 */
+}
+
+footer .container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #212020;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  border-top: 2px solid #fff; /* 푸터에 하얀색 구분선 추가 */
+}

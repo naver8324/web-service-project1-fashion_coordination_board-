@@ -19,7 +19,7 @@ public class CommentController {
     private final CommentMapper commentMapper;
 
     @PostMapping
-    public String createComment(@ModelAttribute CommentDto commentDto, @RequestParam Long postId, RedirectAttributes redirectAttributes) {
+    public String createComment(@ModelAttribute CommentDto commentDto, @RequestParam(name = "postId") Long postId, RedirectAttributes redirectAttributes) {
         Comment comment = commentMapper.commentDtoToComment(commentDto);
         commentService.createComment(postId, comment);
         redirectAttributes.addAttribute("postId", postId);
@@ -27,7 +27,7 @@ public class CommentController {
     }
 
     @PostMapping("/{commentId}/edit")
-    public String updateComment(@PathVariable Long commentId, @ModelAttribute CommentDto commentDto, RedirectAttributes redirectAttributes) {
+    public String updateComment(@PathVariable(name = "commentId") Long commentId, @ModelAttribute CommentDto commentDto, RedirectAttributes redirectAttributes) {
         Comment comment = commentMapper.commentDtoToComment(commentDto);
         Comment updatedComment = commentService.updateComment(commentId, comment);
 
@@ -36,7 +36,7 @@ public class CommentController {
     }
 
     @DeleteMapping("/{commentId}")
-    public String deleteComment(@PathVariable Long commentId) {
+    public String deleteComment(@PathVariable(name = "commentId") Long commentId) {
         commentService.deleteComment(commentId);
         return "redirect:/posts";
     }

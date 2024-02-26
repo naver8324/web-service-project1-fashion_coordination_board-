@@ -47,10 +47,10 @@ public class BoardController {
      comment 키워드 검색 기능 추가
      */
     @GetMapping("/{boardId}")
-    public String getBoard(@PathVariable Long boardId,
-                           @RequestParam(defaultValue = "0") int page,
-                           @RequestParam(defaultValue = "10") int size,
-                           @RequestParam(required = false) String keyword,
+    public String getBoard(@PathVariable(name = "boardId") Long boardId,
+                           @RequestParam(name = "page", defaultValue = "0") int page,
+                           @RequestParam(name = "size", defaultValue = "10") int size,
+                           @RequestParam(name = "keyword", required = false) String keyword,
                            Model model) {
         Board board = boardService.findBoardById(boardId);
         PageRequest pageRequest = PageRequest.of(page, size);
@@ -76,7 +76,7 @@ public class BoardController {
     }
 
     @GetMapping("/{boardId}/edit")
-    public String editBoard(@PathVariable Long boardId, Model model) {
+    public String editBoard(@PathVariable(name = "boardId") Long boardId, Model model) {
         Board board = boardService.findBoardById(boardId);
         model.addAttribute("board", board);
 
@@ -84,7 +84,7 @@ public class BoardController {
     }
 
     @PostMapping("/{boardId}/edit")
-    public String editBoardPost(@PathVariable Long boardId, @ModelAttribute BoardDto boardDto) {
+    public String editBoardPost(@PathVariable(name = "boardId") Long boardId, @ModelAttribute BoardDto boardDto) {
         Board board = boardMapper.boardPostDtoToBoard(boardDto).toBuilder().id(boardId).build();
         boardService.updateBoard(board);
 
@@ -92,7 +92,7 @@ public class BoardController {
     }
 
     @DeleteMapping("/{boardId}/delete")
-    public String deleteBoard(@PathVariable Long boardId) {
+    public String deleteBoard(@PathVariable(name = "boardId") Long boardId) {
         boardService.deleteBoard(boardId);
 
         return "redirect:/boards";
