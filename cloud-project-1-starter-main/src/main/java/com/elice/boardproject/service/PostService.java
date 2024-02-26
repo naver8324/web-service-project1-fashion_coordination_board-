@@ -1,9 +1,11 @@
 package com.elice.boardproject.service;
 
 import com.elice.boardproject.entity.Board;
+import com.elice.boardproject.entity.Comment;
 import com.elice.boardproject.entity.Post;
 import com.elice.boardproject.exception.ExceptionCode;
 import com.elice.boardproject.exception.ServiceLogicException;
+import com.elice.boardproject.repository.CommentRepository;
 import com.elice.boardproject.repository.PostRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -11,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,9 +23,12 @@ public class PostService {
     private final PostRepository postRepository;
     private final BoardService boardService;
 
-    public PostService(PostRepository postRepository, BoardService boardService) {
+    private final CommentRepository commentRepository;
+
+    public PostService(PostRepository postRepository, BoardService boardService, CommentRepository commentRepository) {
         this.postRepository = postRepository;
         this.boardService = boardService;
+        this.commentRepository = commentRepository;
     }
 
     public Page<Post> findPostsByBoardAndKeyword(Board board, String keyword, PageRequest pageRequest) {
@@ -60,6 +66,11 @@ public class PostService {
     }
 
     public void deletePost(Long id) {
+        List<Comment> comments = commentRepository.findByPostId(id);
+
+        // 해당 게시글 관련 코멘트 삭제
+        commentRepository.deleteAll(comments);
+
         Post foundPost = postRepository.findById(id)
                 .orElseThrow(() -> new ServiceLogicException(ExceptionCode.POST_NOT_FOUND));
 
