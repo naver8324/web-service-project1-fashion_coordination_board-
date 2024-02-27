@@ -29,7 +29,7 @@ public class PostController {
     private final CommentService commentService;
 
     @GetMapping("/{postId}")
-    public String getPostDetail(@PathVariable Long postId, Model model) {
+    public String getPostDetail(@PathVariable(name = "postId") Long postId, Model model) {
         Post post = postService.findPost(postId);
         model.addAttribute("post", post);
         List<Comment> comments = commentService.findCommentsByPostId(postId);
@@ -38,27 +38,27 @@ public class PostController {
     }
 
     @GetMapping("/create")
-    public String createPost(@RequestParam Long boardId, Model model) {
+    public String createPost(@RequestParam(name = "boardId") Long boardId, Model model) {
         model.addAttribute("boardId", boardId);
         return "post/createPost";
     }
 
     @PostMapping("/create")
-    public String createPostPost(@ModelAttribute PostDto postDto, @RequestParam Long boardId) {
+    public String createPostPost(@ModelAttribute PostDto postDto, @RequestParam(name = "boardId") Long boardId) {
         Post post = postMapper.postPostDTOToPost(postDto);
         Post createdPost = postService.createPost(post, boardId);
         return "redirect:/boards/" + createdPost.getBoard().getId();
     }
 
     @GetMapping("/{postId}/edit")
-    public String editPost(@PathVariable Long postId, Model model) {
+    public String editPost(@PathVariable(name = "postId") Long postId, Model model) {
         Post post = postService.findPost(postId);
         model.addAttribute("post", post);
         return "post/editPost";
     }
 
     @PostMapping("/{postId}/edit")
-    public String editPost(@PathVariable Long postId, @ModelAttribute PostDto postDto, RedirectAttributes redirectAttributes) {
+    public String editPost(@PathVariable(name = "postId") Long postId, @ModelAttribute PostDto postDto, RedirectAttributes redirectAttributes) {
         Post post = postMapper.postPostDTOToPost(postDto);
         Post updatedPost = postService.updatePost(post, postId);
 
@@ -68,7 +68,7 @@ public class PostController {
     }
 
     @DeleteMapping("/{postId}")
-    public String deletePost(@PathVariable Long postId, RedirectAttributes redirectAttributes) {
+    public String deletePost(@PathVariable(name = "postId") Long postId, RedirectAttributes redirectAttributes) {
         postService.deletePost(postId);
         redirectAttributes.addFlashAttribute("message", "과목이 제거되었습니다.");
         return "redirect:/posts";
