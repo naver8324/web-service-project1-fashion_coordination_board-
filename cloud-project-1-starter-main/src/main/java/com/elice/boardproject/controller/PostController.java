@@ -38,7 +38,7 @@ public class PostController {
     }
 
     @GetMapping("/create")
-    public String createPost(@RequestParam(name = "postId") Long boardId, Model model) {
+    public String createPost(@RequestParam(name = "boardId") Long boardId, Model model) {
         model.addAttribute("boardId", boardId);
         return "post/createPost";
     }

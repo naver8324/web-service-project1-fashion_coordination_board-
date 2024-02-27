@@ -45,7 +45,7 @@ public class CommentService {
     }
 
     public Comment updateComment(Long commentId, Comment comment) {
-        Comment foundComment = commentRepository.findById(comment.getId())
+        Comment foundComment = commentRepository.findById(commentId)
                 .orElseThrow(() -> new ServiceLogicException(ExceptionCode.COMMENT_NOT_FOUND));
 
         Optional.ofNullable(comment.getContent())
