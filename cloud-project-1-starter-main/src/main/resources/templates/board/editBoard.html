@@ -17,50 +17,56 @@
       html,
       body {
         font-family: "Elice DX Neolli", sans-serif;
+        background-color: #b2b2b2;
+      }
+      body .btn-primary {
+        background-color: #666;
+        color: #fff;
+        border: none;
       }
     </style>
-    <title>게시판 수정</title>
+    <title>카테고리 수정</title>
   </head>
   <body>
     <div class="container my-5">
       <div class="header mb-5">
-        <h1 class="text-center">게시판 수정</h1>
+        <h1 class="text-center">Modify Category</h1>
       </div>
       <form
         th:action="@{/boards/{boardId}/edit(boardId=${board.id})}"
         method="post"
       >
         <div class="mb-3">
-          <label for="name">게시판 이름</label>
+          <label for="name">Category Name</label>
           <input
             type="text"
             class="form-control"
             id="name"
             name="name"
             maxlength="20"
-            placeholder="게시판 이름 입력 (최대 20자)"
+            placeholder="카테고리 이름 입력 (최대 20자)"
             required
             th:value="${board.name}"
           />
         </div>
         <div class="mb-3">
-          <label for="description">게시판 설명</label>
+          <label for="description">Category Description</label>
           <textarea
             class="form-control"
             id="description"
             name="description"
             maxlength="200"
-            placeholder="게시판 설명 입력 (최대 200자)"
+            placeholder="카테고리 설명 입력 (최대 200자)"
             th:text="${board.description}"
           ></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">게시판 수정</button>
+        <button type="submit" class="btn btn-primary">Modify Category</button>
         <button
           type="button"
           class="btn btn-secondary"
           onclick="window.history.back();"
         >
-          취소
+          Cancel
         </button>
       </form>
     </div>

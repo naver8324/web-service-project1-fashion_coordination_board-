@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - PPSC</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" th:href="@{/css/login.css}"/>
 </head>
 
 <body>
-<!-- <header>
-    <div class="header-left">
-        <h1>PPSC</h1>
-    </div>
-</header> -->
 <header>
     <div class="header-left">
         <h1>Premium Personal Style Codi</h1>
@@ -40,8 +34,7 @@
         <p>이메일: info@ppsc.com</p>
     </div>
 </footer>
-
-<script src="login.js"></script>
+<script type="text/javascript" th:src="@{/js/login.js}"></script>
 </body>
 
 </html>
