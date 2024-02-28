@@ -34,6 +34,11 @@ header {
   background-color: #444; /* hover 시 색상 변경 */
 }
 
+body .container {
+  margin: 50px;
+  padding: 20px;
+}
+
 footer .container {
   max-width: 400px;
   margin: 50px auto;
