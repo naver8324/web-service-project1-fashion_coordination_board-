@@ -21,17 +21,29 @@
       html,
       body {
         font-family: "Elice DX Neolli", sans-serif;
+        background-color: #b2b2b2;
       }
+
+      .btn-primary {
+        background-color: #666;
+        color: #fff;
+        border: none;
+      }
+
+      .link{
+      color: black;
+      }
+
     </style>
     <title th:text="${board.name}"></title>
   </head>
   <body>
     <div class="container my-5">
       <a
-        class="link link-offset-1 link-offset-2-hover text-sm fs-6 mb-2 d-block"
-        style="transition: all 0.1s ease-in-out"
-        th:href="@{/boards}"
-        >&larr; 게시판 목록으로 돌아가기</a
+              class="link link-offset-1 link-offset-2-hover text-sm fs-6 mb-2 d-block"
+              style="transition: all 0.1s ease-in-out"
+              th:href="@{/boards}"
+      >&larr; Back</a
       >
       <div class="header mb-5">
         <h1 class="text-center" th:text="${board.name}">게시판 제목</h1>
@@ -57,7 +69,7 @@
         <a
           th:href="@{/posts/create(boardId=${board.id})}"
           class="btn btn-primary"
-          >게시글 추가</a
+          >Add Category</a
         >
       </div>
       <div class="list-group position-relative mb-3">

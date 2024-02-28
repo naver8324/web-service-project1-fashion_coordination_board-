@@ -21,6 +21,7 @@
       html,
       body {
         font-family: "Elice DX Neolli", sans-serif;
+        background-color: #b2b2b2;
       }
 
       .card {
@@ -42,16 +43,22 @@
       .board-item:hover > .btn-group {
         display: flex;
       }
+
+      body .btn {
+        background-color: #666;
+        color: #fff;
+        border: none;
+      }
     </style>
     <title>게시판</title>
   </head>
   <body>
     <div class="container my-5">
       <div class="header mb-5">
-        <h1 class="text-center">게시판 목록</h1>
+        <h1 class="text-center">PPSC</h1>
       </div>
       <div class="d-flex justify-content-end mb-3">
-        <a th:href="@{/boards/create}" class="btn btn-primary">게시판 추가</a>
+        <a th:href="@{/boards/create}" class="btn btn-primary">Add Category</a>
       </div>
       <div class="container p-0">
         <div class="row row-cols-3 position-relative">
@@ -71,8 +78,8 @@
               >
                 <img
                   class="img-thumbnail w-50 h-50 me-3"
-                  src="hellobit.png"
-                  alt="hellobit"
+                  src="ppsc.png"
+                  alt="ppsc"
                 />
                 <div>
                   <h4

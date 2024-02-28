@@ -17,6 +17,13 @@
       html,
       body {
         font-family: "Elice DX Neolli", sans-serif;
+        background-color: #b2b2b2;
+      }
+
+      body .btn-primary {
+        background-color: #666;
+        color: #fff;
+        border: none;
       }
     </style>
     <title>게시글 수정</title>
@@ -53,13 +60,13 @@
             th:text="${post.content}"
           ></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">수정</button>
+        <button type="submit" class="btn btn-primary">Modify</button>
         <button
           type="button"
           class="btn btn-secondary"
           onclick="window.history.back();"
         >
-          취소
+          Cancel
         </button>
       </form>
     </div>

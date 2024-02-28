@@ -19,7 +19,7 @@ public class Post extends BaseEntity{
     @JoinColumn(name = "board_id", nullable = false)
     private Board board;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 60)
     private String title;
 
     @Column(nullable = false, columnDefinition = "TEXT")
@@ -43,7 +43,6 @@ public class Post extends BaseEntity{
 //@AllArgsConstructor
 //@Getter
 //@Entity
-//@Table(name = "post")
 //public class Post {
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
