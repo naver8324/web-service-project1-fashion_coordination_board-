@@ -34,7 +34,7 @@ public class User {
 //
 //    @Column(name = "favorite_Brand")
 //    private String favoriteBrand;
-
-    @Column(name = "photo_path")
-    private String photoPath;
+//
+//    @Column(name = "photo_path")
+//    private String photoPath;
 }
