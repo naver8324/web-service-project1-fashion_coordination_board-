@@ -26,6 +26,6 @@ public class Stylelist {
     @Column(nullable = false)
     private String nickname;
 
-    @Column(name = "pr_link")
-    private String prLink;
+//    @Column(name = "pr_link")
+//    private String prLink;
 }
