@@ -22,22 +22,19 @@ public class User {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private int height;
-
-    @Column(nullable = false)
-    private int weight;
-
-    @Enumerated(value = EnumType.STRING) // Enum 타입으로 지정
-    @Column(name = "favorite_style")
-    private FavoriteStyle favoriteStyle;
-
-    @Column(name = "favorite_Brand")
-    private String favoriteBrand;
-
-    @Column(name = "favorite_stylelist")
-    private String favoriteStylelist;
-
-    @Column(name = "photo_path")
-    private String photoPath;
+//    @Column(nullable = false)
+//    private int height;
+//
+//    @Column(nullable = false)
+//    private int weight;
+//
+//    @Enumerated(value = EnumType.STRING) // Enum 타입으로 지정
+//    @Column(name = "favorite_style")
+//    private FavoriteStyle favoriteStyle;
+//
+//    @Column(name = "favorite_Brand")
+//    private String favoriteBrand;
+//
+//    @Column(name = "photo_path")
+//    private String photoPath;
 }

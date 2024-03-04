@@ -4,4 +4,5 @@ import com.elice.boardproject.entity.Stylelist;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StylelistRepository extends JpaRepository<Stylelist, Integer> {
+    Stylelist findByLoginIdAndPassword(String loginId, String password);
 }

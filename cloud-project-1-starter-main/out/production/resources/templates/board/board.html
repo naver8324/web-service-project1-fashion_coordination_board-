@@ -66,11 +66,20 @@
             </button>
           </div>
         </form>
+        <!-- 만약 session.userName이 null이면 -->
+        <div th:if="${session.userName == null}">
+
         <a
           th:href="@{/posts/create(boardId=${board.id})}"
           class="btn btn-primary"
           >Add Category</a
         >
+        </div>
+
+        <!-- 만약 session.userName이 null이 아니면 -->
+        <div th:unless="${session.userName == null}">
+          <div th:text="${session.userName + '님'}" class="me-3"></div>
+        </div>
       </div>
       <div class="list-group position-relative mb-3">
         <a

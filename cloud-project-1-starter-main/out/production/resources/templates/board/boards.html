@@ -58,7 +58,15 @@
         <h1 class="text-center">PPSC</h1>
       </div>
       <div class="d-flex justify-content-end mb-3">
-        <a th:href="@{/boards/create}" class="btn btn-primary">Add Category</a>
+        <!-- 만약 session.userName이 null이면 -->
+        <div th:if="${session.userName == null}">
+          <a th:href="@{/boards/create}" class="btn btn-primary">Add Category</a>
+        </div>
+
+        <!-- 만약 session.userName이 null이 아니면 -->
+        <div th:unless="${session.userName == null}">
+          <div th:text="${session.userName + '님'}" class="me-3"></div>
+        </div>
       </div>
       <div class="container p-0">
         <div class="row row-cols-3 position-relative">
@@ -99,6 +107,9 @@
                   role="group"
                   aria-label="edit-delete"
                 >
+                  <!-- 만약 session.userName이 null이면 -->
+                  <div th:if="${session.userName == null}">
+
                   <button
                     class="btn btn-outline-primary lh-1"
                     th:onclick="'event.preventDefault(); location.href=\'/boards/' + ${board.id} + '/edit\''"
@@ -113,6 +124,11 @@
                   >
                     <span class="material-symbols-outlined"> delete </span>
                   </button>
+                  </div>
+
+                  <!-- 만약 session.userName이 null이 아니면 -->
+                  <div th:unless="${session.userName == null}">
+                  </div>
                 </div>
               </a>
             </div>

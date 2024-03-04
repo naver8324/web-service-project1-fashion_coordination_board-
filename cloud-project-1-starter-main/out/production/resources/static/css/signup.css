@@ -21,6 +21,16 @@ header {
   font-family: "Arial Black", sans-serif;
 }
 
+.header-right button {
+  background-color: #666; /* 회색으로 변경 */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .container {
   max-width: 600px;
   margin: 50px auto;
@@ -29,11 +39,19 @@ header {
   border-radius: 10px;
 }
 
+.signup {
+  width: calc(100% - 24px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="number"],
 select,
-button,
 input[type="file"] {
   width: calc(100% - 24px);
   padding: 10px;
@@ -42,6 +60,16 @@ input[type="file"] {
   border-radius: 5px;
   box-sizing: border-box;
 }
+
+input[type="checkbox"] {
+  margin-right: 10px; /* 체크박스와 라벨 사이에 간격을 조정 */
+}
+
+label[for="agreeTerms"] {
+  display: block;
+  margin-bottom: 10px; /* 라벨과 다음 요소 사이의 간격을 조정 */
+}
+
 
 button {
   background-color: #666; /* 진한 빨강색 */

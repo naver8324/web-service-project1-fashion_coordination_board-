@@ -8,8 +8,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "stylelist")
 public class Stylelist {
@@ -26,6 +24,6 @@ public class Stylelist {
     @Column(nullable = false)
     private String nickname;
 
-    @Column(name = "pr_link")
-    private String prLink;
+//    @Column(name = "pr_link")
+//    private String prLink;
 }

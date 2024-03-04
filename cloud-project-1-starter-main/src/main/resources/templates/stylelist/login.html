@@ -13,15 +13,15 @@
         <h1>Premium Personal Style Codi</h1>
     </div>
     <div class="header-right">
-        <a th:href="@{/stylelist/login}"><button>Stylelist Login</button></a>
+        <a th:href="@{/user/login}"><button>User Login</button></a>
         <a th:href="@{/user/signup}"><button>User Sign-up</button></a>
         <a th:href="@{/stylelist/signup}"><button>Stylelist Sign-up</button></a>
     </div>
 </header>
 
 <div class="container" id="login-form-container">
-    <h2>고객 로그인</h2>
-    <form id="login-form" th:action="@{/user/login}" method="post">
+    <h2>스타일리스트 로그인</h2>
+    <form id="login-form" th:action="@{/stylelist/login}" method="post">
         <input type="text" id="loginId" name="loginId" placeholder="아이디" required>
         <input type="password" id="password" name="password" placeholder="비밀번호" required>
         <button type="submit">로그인</button>
